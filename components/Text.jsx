@@ -2,7 +2,7 @@ import React from 'react';
 
 const Text = () => {
     return (
-        <div>
+        <div className='bg-blue-600'>
             Hellow text
         </div>
     );

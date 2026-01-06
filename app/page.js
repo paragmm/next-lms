@@ -10,7 +10,7 @@ export default function Home() {
       <Button variant="outline" size="icon" aria-label="Submit">
         <ArrowUpIcon />
       </Button>
-      <Text className="bg-black" />
+      <Text />
     </div>
   );
 }
