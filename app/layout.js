@@ -1,8 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils"
-import { Toaster } from "@/components/ui/sonner"
+import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/sonner";
+import { connectToDatabase } from "@/services/mongo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +24,9 @@ const poppins = Inter({
   variable: "--font-poppins",
   weight: ["400", "700"]
 });
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const conn = await connectToDatabase();
+  console.log("Database connection status:", conn);
   return (
     <html lang="en">
       <body
