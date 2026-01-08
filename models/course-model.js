@@ -13,24 +13,22 @@ const courseSchema = new Schema({
     price: { type: Number, required: true },
     active: { type: Boolean, default: true },
     category: {
-        required: true,
         type: Schema.ObjectId,
+        ref: "Category"
     },
     instructor: {
         required: true,
         type: Schema.ObjectId,
+        ref: "User"
     },
-    testimonials: {
+    testimonials: [{
         required: false,
-        type: [Schema.ObjectId],
-    },
+        type: Schema.ObjectId,
+        ref: "Testimonial"
+    }],
     quizSet: {
         required: false,
         type: Schema.ObjectId,
-    },
-    quizSet: {
-        required: false,
-        type: [String],
     },
     createdOn: {
         required: false,
